@@ -26,6 +26,7 @@ bin.gopt.*
 obj.gopt.*
 obj.prof.*
 bin.prof.*
+build.*/
 
 repro/reproInfo.hxx
 repro/repro
@@ -116,4 +117,3 @@ rutil/test/testRandomHex
 rutil/test/testRandomThread
 rutil/test/testSHA1Stream
 rutil/test/testThreadIf
-
