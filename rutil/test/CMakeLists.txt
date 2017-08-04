@@ -1,0 +1,36 @@
+INCLUDE_DIRECTORIES(../..)
+
+FUNCTION(TEST)
+   TEST_BASE(${ARGV})
+   SET_TARGET_PROPERTIES(${ARGV0} PROPERTIES FOLDER rutil/Tests)
+   TARGET_LINK_LIBRARIES(${ARGV0} rutil)
+ENDFUNCTION()
+
+TEST(testCoders testCoders.cxx)
+TEST(testCompat testCompat.cxx)
+TEST(testCountStream testCountStream.cxx)
+TEST(testData testData.cxx)
+TEST(testDataPerformance testDataPerformance.cxx)
+TEST(testDataStream testDataStream.cxx)
+TEST(testDnsUtil testDnsUtil.cxx)
+TEST(testFifo testFifo.cxx)
+TEST(testFileSystem testFileSystem.cxx)
+TEST(testInserter testInserter.cxx)
+TEST(testIntrusiveList testIntrusiveList.cxx)
+TEST(testKeyValueStore testKeyValueStore.cxx)
+TEST(testLogger TestSubsystemLogLevel.cxx testLogger.cxx)
+TEST(testMD5Stream testMD5Stream.cxx)
+TEST(testParseBuffer testParseBuffer.cxx)
+TEST(testRandomHex testRandomHex.cxx)
+TEST(testRandomThread testRandomThread.cxx)
+TEST(testSHA1Stream testSHA1Stream.cxx)
+TEST(testSharedPtr testSharedPtr.cxx)
+TEST(testThreadIf testThreadIf.cxx)
+TEST(testXMLCursor testXMLCursor.cxx)
+
+IF(${WITH_SSL})
+# TODO DigestStream.cxx doesn't seem to work on Windows... fix it or remove
+# file if not used at all?
+#   TEST(testDigestStream testDigestStream.cxx)
+ENDIF()
+
