@@ -46,6 +46,7 @@ SET(INCLUDES
    RecursiveMutex.hxx
    SelectInterruptor.hxx
    ServerProcess.hxx
+   Sha1.hxx
    SharedCount.hxx
    SharedPtr.hxx
    Socket.hxx
@@ -139,6 +140,7 @@ SET(SOURCES
    RWMutex.cxx
    SelectInterruptor.cxx
    ServerProcess.cxx
+   Sha1.cxx
    Socket.cxx
    stun/Stun.cxx
    stun/Udp.cxx

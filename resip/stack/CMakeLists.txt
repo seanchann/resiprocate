@@ -114,12 +114,14 @@ SET(INCLUDES
    Symbols.hxx
    TcpBaseTransport.hxx
    TcpConnection.hxx
+   TcpConnectState.hxx
    TcpTransport.hxx
    TerminateFlow.hxx
    TimeAccumulate.hxx
    TimerMessage.hxx
    TimerQueue.hxx
    Token.hxx
+   TokenOrQuotedStringCategory.hxx
    TransactionController.hxx
    TransactionControllerThread.hxx
    TransactionMap.hxx
@@ -215,7 +217,6 @@ SET(SOURCES
    GenericUri.cxx
    HeaderFieldValue.cxx
    HeaderFieldValueList.cxx
-   HeaderHash.cxx
    Headers.cxx
    HeaderTypes.cxx
    Helper.cxx
@@ -231,7 +232,6 @@ SET(SOURCES
    Message.cxx
    MessageFilterRule.cxx
    MessageWaitingContents.cxx
-   MethodHash.cxx
    MethodTypes.cxx
    Mime.cxx
    MsgHeaderScanner.cxx
@@ -243,7 +243,6 @@ SET(SOURCES
    NonceHelper.cxx
    OctetContents.cxx
    Parameter.cxx
-   ParameterHash.cxx
    ParameterTypes.cxx
    ParserCategories.cxx
    ParserCategory.cxx
@@ -276,11 +275,13 @@ SET(SOURCES
    Symbols.cxx
    TcpBaseTransport.cxx
    TcpConnection.cxx
+   TcpConnectState.cxx
    TcpTransport.cxx
    TimeAccumulate.cxx
    TimerMessage.cxx
    TimerQueue.cxx
    Token.cxx
+   TokenOrQuotedStringCategory.cxx
    TransactionController.cxx
    TransactionMap.cxx
    TransactionState.cxx
@@ -310,6 +311,15 @@ SET(SOURCES
    WsTransport.cxx
    X509Contents.cxx
 )
+
+SET(SOURCES_GEN_FILE
+   gen/DayOfWeekHash.cxx
+   gen/HeaderHash.cxx
+   gen/MethodHash.cxx
+   gen/MonthHash.cxx
+   gen/ParameterHash.cxx
+)
+LIST(APPEND SOURCES ${SOURCES_GEN_FILE}) 
 
 SET(SOURCES_SSL
    ssl/DtlsTransport.cxx
